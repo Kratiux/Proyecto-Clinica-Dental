@@ -4,6 +4,11 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+//import authRoutes from "./routes/auth.route.js";
+
+//const users = require('./routes/users.route');
+
+
 
 const app = express();
 app.use(cors());
@@ -45,6 +50,7 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message});
 }
 
-//routes
 
-module.exports = app;
+//app.use('/backend', users);
+
+//app.use(authRoutes);
