@@ -13,6 +13,7 @@ import BlogDetails from './Components/Page/BlogDetails';
 import FooterData from './Components/Data/FooterData';
 import SignIn from './Components/SignIn/signIn';
 import SignUp from './Components/SignUp/signUp';
+import Contra from './Components/Contra/contra';
 import Dashboard from './Components/Admin/Dashboard';
 import MaybeShowNavBar from './Components/MaybeShowNavBar/MaybeShowNavBar';
 import './App.css';
@@ -42,7 +43,8 @@ function App() {
         <Route path='/Page/Team' component={Team} />
         <Route path='/Page/Contact' component={Contact} />
         <Route path='/SignIn/signIn' component={SignIn} />
-        <Route path='/SignUp/signUp' component={SignUp} />
+        <Route path='/SignUp/signUp' component={SignUp} />        
+        <Route path='/Contra/contra' component={Contra} />        
 
         <MaybeShowNavBar>
 		    <FooterOne FooterData={FooterData} />

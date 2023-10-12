@@ -30,50 +30,36 @@ function Copyright() {
   );
 }
 
+
+
+
+
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(0),
+    marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
   avatar: {
-    marginTop: theme.spacing(8),
+    margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(5)
+    marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-  }
+  },
 }));
 
-const bgStyle = {
-  backgroundColor: '#004CAA',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  minHeight: '100vh',
-};
-
-const tfStyle = {
-  background: 'white',
-  color: 'black',
-  borderRadius: '10px',
-};
-
-const txtWhite = {
-  color: 'white'
-};
-
-const txtLB = {
-  color: '#75D4F7'
-};
 
 
-export default function SignIn() {
+
+
+
+export default function Contra() {
 
   const classes = useStyles();
   let history = useHistory();
@@ -152,20 +138,18 @@ export default function SignIn() {
 
 
   return (
-    <div style={bgStyle}>
-    <Container component="main" style={{maxWidth: 600}}>
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
 
         </Avatar>
-        <Typography component="h1" variant="h5" style={txtWhite}>
+        <Typography component="h1" variant="h5">
           Iniciar Sesión
         </Typography>
         <form className={classes.form} noValidate>
           <Textfield
-            style={tfStyle}
-            variant="filled"
+            variant="outlined"
             margin="normal"
             required
             fullWidth
@@ -176,23 +160,6 @@ export default function SignIn() {
             autoComplete="email"
             autoFocus
           />
-          <Textfield
-            style={tfStyle}
-            variant="filled"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Contraseña"
-            type="password"
-            id="password"
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" style={txtWhite} />}
-            label={<span style={txtWhite}>Recuerdame</span>}
-          />
           {/*  {error && <div className={styles.error_msg}>{error}</div>} */}
           <Button
             onClick={handleSubmit}
@@ -202,33 +169,13 @@ export default function SignIn() {
             color="primary"
             className={classes.submit}
           >
-            Iniciar Sesión
+            Recuperar Contraseña
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="/Contra/contra" variant="body2" style={txtWhite}>
-                Olvidó la contraseña?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="/SignUp/signUp" variant="body2" style={txtWhite}>
-                {"No tienes cuenta? Registrate"}
-              </Link>
-            </Grid>
-          </Grid>
-          <div container>
-
-            <Link href="/" variant="body2" style={txtWhite}>
-              {"Volver"}
-            </Link>
-
-          </div>
         </form>
       </div>
       <Box mt={8}>
         <Copyright />
       </Box>
     </Container>
-    </div>
   );
 }
