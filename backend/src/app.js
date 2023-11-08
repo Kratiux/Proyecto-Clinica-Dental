@@ -15,7 +15,7 @@ const LoginRoute = require('./routes/login.route');
 app.use(express.json());
 app.use(cors({
 
-  origin: ["http://localhost:3000"],    //allow the frontend
+  origin: ["https://deploy-mern-1whq.vercel.app"],    //allow the frontend
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 
