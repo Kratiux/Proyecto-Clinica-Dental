@@ -14,7 +14,20 @@ import FooterData from './Components/Data/FooterData';
 import SignIn from './Components/SignIn/signIn';
 import SignUp from './Components/SignUp/signUp';
 import Dashboard from './Components/Admin/Dashboard';
+import DashboardPatient from './Components/Admin/DashboardPatient';
+import DashboardCreateFile from './Components/Admin/DashboardCreateFile';
+import DashboardUpdateFile from './Components/Admin/DashboardUpdateFile';
+import DashboardCreateUser from './Components/Admin/DashboardCreateUser';
 import MaybeShowNavBar from './Components/MaybeShowNavBar/MaybeShowNavBar';
+import UserList from './Components/Admin/Users';
+import UpdateUser from './Components/Admin/UpdateUser';
+import CreateUser from './Components/Admin/UserCreate';
+import FileCreate from './Components/Admin/FileCreate';
+import FileList from './Components/Admin/FilePatient';
+import UpdateFile from './Components/Admin/UpdateFile';
+import Scheduler from './Components/Scheduler/scheduler';
+import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
+import BlogAdminDetail from './Components/BlogAdmin/BlogDetailsAdmin';
 import './App.css';
 
 function App() {
@@ -24,6 +37,12 @@ function App() {
       <Router>
        <Switch>
        <Route exact path='/Admin/Dashboard' component={Dashboard} />
+       <Route exact path='/Admin/DashboardPatient' component={DashboardPatient} />
+       <Route exact path='/Admin/DashboardCreateFile' component={DashboardCreateFile} />
+       <Route exact path='/Admin/DashboardUpdateFile' component={DashboardUpdateFile} />
+       <Route exact path='/Admin/DashboardCreateUser' component={DashboardCreateUser} />
+       <Route exact path='/Admin/UpdateFile/:id' component={UpdateFile} />
+       <Route exact path='/Admin/UpdateUser/:id' component={UpdateUser} />
        </Switch>
        <MaybeShowNavBar>
         <Header />
@@ -43,10 +62,22 @@ function App() {
         <Route path='/Page/Contact' component={Contact} />
         <Route path='/SignIn/signIn' component={SignIn} />
         <Route path='/SignUp/signUp' component={SignUp} />
+        <Route path='/Admin/Users' component={UserList} />
+        <Route path='/Admin/UserCreate' component={CreateUser}/>
+        <Route path='/Admin/FileCreate' component={FileCreate}/>
+        <Route path='/Admin/FilePatient' component={FileList}/>
+        <Route path='/Scheduler/scheduler' component={Scheduler}/>
+        <Route path='/BlogAdmin/BlogAdmin' component={BlogAdmin}/>
+        <Route path='/BlogAdmin/BlogDetailsAdmin' component={BlogAdminDetail}/>
+
+        
+  
 
         <MaybeShowNavBar>
 		    <FooterOne FooterData={FooterData} />
         </MaybeShowNavBar>
+
+        
       </Router>
     </div>
   );

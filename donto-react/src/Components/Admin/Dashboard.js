@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react' 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,9 +19,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
+import axios  from 'axios';
 import Chart from './Chart';
 /*import Deposits from './Deposits';*/
 import Orders from './Orders';
+import Users from './Users';
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 function Copyright() {
   return (
@@ -118,6 +122,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+
+  axios.defaults.withCredentials = true;
+  let history = useHistory();
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -128,9 +135,30 @@ export default function Dashboard() {
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+
+   const[suc,setSuc]= useState()
+    
+  useEffect(()=>   {
+      axios.get('http://localhost:3001/dashboard')
+      .then(result => {console.log(result)
+         if(result.data === "Success"){
+  
+          setSuc("Successded OK") 
+          
+         }else{
+                    history.push('/home')
+
+         }
+         
+     
+      
+      })
+      .catch(err=> console.log(err))
+     
+  },[])
   return (
     <div className={classes.root}>
-        
+      
       <CssBaseline />
       
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
@@ -191,7 +219,7 @@ export default function Dashboard() {
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <Users />
               </Paper>
             </Grid>
           </Grid>
