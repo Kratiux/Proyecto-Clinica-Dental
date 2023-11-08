@@ -5,10 +5,17 @@
         {"src": "*.js", "use":"@vercel/node"}
     ],
 
-    "rewrites": [
+    "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "/index.html"
+        }
+    ],
+
+    "rewrite": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 
