@@ -18,6 +18,7 @@ import DashboardPatient from './Components/Admin/DashboardPatient';
 import DashboardCreateFile from './Components/Admin/DashboardCreateFile';
 import DashboardUpdateFile from './Components/Admin/DashboardUpdateFile';
 import DashboardCreateUser from './Components/Admin/DashboardCreateUser';
+import DashboardScheduler from './Components/Admin/DashboardScheduler';
 import MaybeShowNavBar from './Components/MaybeShowNavBar/MaybeShowNavBar';
 import UserList from './Components/Admin/Users';
 import UpdateUser from './Components/Admin/UpdateUser';
@@ -41,6 +42,7 @@ function App() {
        <Route exact path='/Admin/DashboardCreateFile' component={DashboardCreateFile} />
        <Route exact path='/Admin/DashboardUpdateFile' component={DashboardUpdateFile} />
        <Route exact path='/Admin/DashboardCreateUser' component={DashboardCreateUser} />
+       <Route exact path='/Admin/DashboardScheduler' component={DashboardScheduler} />
        <Route exact path='/Admin/UpdateFile/:id' component={UpdateFile} />
        <Route exact path='/Admin/UpdateUser/:id' component={UpdateUser} />
        </Switch>

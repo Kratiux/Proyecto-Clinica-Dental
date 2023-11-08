@@ -12,7 +12,7 @@ import Link from '@material-ui/core/Link';
 
 export const mainListItems = (
   <div>
-    <Link href='./Dashboard'>
+    <Link href='./DashboardScheduler'>
       <ListItem button>
         <ListItemIcon>
           <DashboardIcon />
@@ -20,7 +20,7 @@ export const mainListItems = (
         <ListItemText primary="Citas" />
       </ListItem>
     </Link>
-    <Link href='./Users'>
+    <Link href='./Dashboard'>
       <ListItem button>
         <ListItemIcon>
           <DashboardIcon />

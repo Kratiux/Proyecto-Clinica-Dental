@@ -6,9 +6,7 @@ import {
   ScheduleComponent,
   Day,
   Week,
-  WorkWeek,
   Month,
-  Agenda,
 } from '@syncfusion/ej2-react-schedule';
 import { registerLicense } from '@syncfusion/ej2-base';
 
