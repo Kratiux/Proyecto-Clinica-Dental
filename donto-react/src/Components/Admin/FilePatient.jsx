@@ -17,7 +17,7 @@ function FileList() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/fileGet')
+    axios.get('https://api.clinicadentalsofiacastro.com/fileGet')
       .then((response) => {
         setFiles(response.data);
       })
@@ -68,6 +68,7 @@ function FileList() {
             <TableCell>
             
               <Link to={`UpdateFile/${file._id}`}>
+              <editPatient />
                 <Button variant="contained" color="primary" className='mr-3'>
                   Actualizar
                 </Button>

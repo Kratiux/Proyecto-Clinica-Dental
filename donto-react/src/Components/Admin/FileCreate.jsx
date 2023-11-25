@@ -57,7 +57,7 @@ function CreateFile() {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    axios.post("http://localhost:3001/registerFile", {identification, names, lastName, description})
+    axios.post("https://api.clinicadentalsofiacastro.com/registerFile", {identification, names, lastName, description})
     .then((response) => {
         // Manejar la respuesta o redirigir a una página de éxito
         console.log('Usuario creado:', response.data);

@@ -12,7 +12,7 @@ function UpdateFile() {
     const [description, setDescription] = useState();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/getFile/${id}`)
+        axios.get(`https://api.clinicadentalsofiacastro.com/getFile/${id}`)
             .then(result => {console.log(result)
                 setIdentification(result.data.identification);
                 setNames(result.data.names);

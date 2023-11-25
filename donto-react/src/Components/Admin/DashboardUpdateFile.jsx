@@ -139,7 +139,7 @@ export default function DashboardUpdateFile() {
    const[suc,setSuc]= useState()
     
   useEffect(()=>   {
-      axios.get('http://localhost:3001/dashboardUpdateFile')
+      axios.get('https://api.clinicadentalsofiacastro.com/dashboardUpdateFile')
       .then(result => {console.log(result)
          if(result.data === "Success"){
   

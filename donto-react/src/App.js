@@ -30,6 +30,7 @@ import Scheduler from './Components/Scheduler/scheduler';
 import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
 import BlogAdminDetail from './Components/BlogAdmin/BlogDetailsAdmin';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (

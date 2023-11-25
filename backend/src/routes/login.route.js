@@ -12,7 +12,7 @@ const cors = require("cors")
 router.use(express.json())
 router.use(cors({
 
-    origin: "http://localhost:3000", //allow the frontend
+    origin: "https://api.clinicadentalsofiacastro.com", //allow the frontend
     methods: ["GET", "POST"],
     credentials: true
     

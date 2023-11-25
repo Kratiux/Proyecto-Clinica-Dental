@@ -9,7 +9,7 @@ function UpdateUser() {
   const [userData, setUserData] = useState({});
   
   useEffect(() => {
-    axios.get(`http://localhost:3001/getUser/${id}`)
+    axios.get(`https://api.clinicadentalsofiacastro.com/getUser/${id}`)
       .then((response) => {
         setUserData(response.data);
         

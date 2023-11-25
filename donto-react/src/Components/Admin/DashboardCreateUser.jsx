@@ -139,7 +139,7 @@ export default function Dashboard() {
    const[suc,setSuc]= useState()
     
   useEffect(()=>   {
-      axios.get('http://localhost:3001/dashboard')
+      axios.get('https://api.clinicadentalsofiacastro.com/dashboard')
       .then(result => {console.log(result)
          if(result.data === "Success"){
   

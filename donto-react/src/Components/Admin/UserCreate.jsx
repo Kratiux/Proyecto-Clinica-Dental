@@ -19,7 +19,7 @@ function CreateUser() {
 
   const handleCreate = () => {
     // Enviar una solicitud POST para crear un nuevo usuario en el servidor
-    axios.post('http://localhost:3001/register', userData)
+    axios.post('https://api.clinicadentalsofiacastro.com/register', userData)
       .then((response) => {
         // Manejar la respuesta o redirigir a una página de éxito
         console.log('Usuario creado:', response.data);

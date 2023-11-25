@@ -16,7 +16,7 @@ function UserList() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/')
+    axios.get('https://api.clinicadentalsofiacastro.com/')
       .then((response) => {
         setUsers(response.data);
       })
