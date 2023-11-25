@@ -7,7 +7,7 @@ current_location=$PWD;
 
 stop_services(){
         # sudo systemctl stop mysql
-        # sudo systemctl stop nginx
+        sudo systemctl stop nginx
         sudo fuser -k 21001/tcp
         sudo fuser -k 21000/tcp  
 }
@@ -18,8 +18,7 @@ preparing_all() {
 
 start_services(){
         # sudo systemctl start mysql
-        # sudo systemctl start nginx
-        echo "hi"
+        sudo systemctl start nginx
 }
 
 run_frontend() {
