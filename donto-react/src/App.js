@@ -29,6 +29,7 @@ import UpdateFile from './Components/Admin/UpdateFile';
 import Scheduler from './Components/Scheduler/scheduler';
 import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
 import BlogAdminDetail from './Components/BlogAdmin/BlogDetailsAdmin';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -46,6 +47,7 @@ function App() {
        <Route exact path='/Admin/DashboardScheduler' component={DashboardScheduler} />
        <Route exact path='/Admin/UpdateFile/:id' component={UpdateFile} />
        <Route exact path='/Admin/UpdateUser/:id' component={UpdateUser} />
+       <Route path='/FogotPassword/ForgotPassword' component={ForgotPassword} />
        </Switch>
        <MaybeShowNavBar>
         <Header />
@@ -72,6 +74,7 @@ function App() {
         <Route path='/Scheduler/scheduler' component={Scheduler}/>
         <Route path='/BlogAdmin/BlogAdmin' component={BlogAdmin}/>
         <Route path='/BlogAdmin/BlogDetailsAdmin' component={BlogAdminDetail}/>
+        
 
         
   

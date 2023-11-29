@@ -6,12 +6,15 @@ const cookieParser = require('cookie-parser')
 require('dotenv').config();
 const UserModel = require('./models/users.model');
 const FileModel = require('./models/file.model');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 
 
 const UserRoute = require('./routes/users.route');
 const LoginRoute = require('./routes/login.route');
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors({
 
@@ -152,6 +155,75 @@ app.put('/updateUser/:id', (req, res) => {
     .catch(err => res.json(err))
 });
 
+
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'clinicadontoreact@gmail.com',
+    pass: 'fhiw mcyb ivqh bmwu',
+  },
+});
+
+
+// Route to handle form submission
+app.post('/send-email', (req, res) => {
+  const { email } = req.body;
+  UserModel.findOne({email: email})
+    .then(user => {
+        if(!user) {
+            return res.send({Status: "User not existed"})
+        }
+
+  // Email options
+  const mailOptions = {
+      from: '', // Sender's email address
+      to: 'yousafdonto@gmail.com', // Receiver's email address
+      subject: "Reiniciar contraseña",
+      html: `<!DOCTYPE html>
+      <html lang="en" >
+      <head>
+        <meta charset="UTF-8">
+        <title>Reiniciar contraseña</title>
+        
+      
+      </head>
+      <body>
+      <!-- partial:index.partial.html -->
+      <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
+        <div style="margin:50px auto;width:70%;padding:20px 0">
+          <div style="border-bottom:1px solid #eee">
+            <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">Clinica Dental Sofia Castro</a>
+          </div>
+          <p style="font-size:1.1em">Hi,</p>
+          <p>Gracias por escoger los servicios de la Clinica Sofia Castro. Con el siguiente link cambie la contraseña</p>
+          <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">http://localhost:3001/reset-password/${email}</h2>
+          <p style="font-size:0.9em;">Les saluda,<br />Clinica Dental Sofia Castro</p>
+          <hr style="border:none;border-top:1px solid #eee" />
+          <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
+            <p>Clinica Sofia Castro R</p>
+            <p>Moravia, San Jose, Costa Rica</p>
+          </div>
+        </div>
+      </div>
+      <!-- partial -->
+        
+      </body>
+      </html>`,
+  };
+
+
+ // Send email
+ transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+      return res.status(500).send(error.toString());
+  }
+  return res.send({ Status: "Success" });
+});
+
+    });
+
+});
 
 
 
