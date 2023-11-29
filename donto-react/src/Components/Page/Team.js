@@ -7,7 +7,7 @@ class Team extends Component {
     render() {
         return (
             <React.Fragment>
-                <Banner pageTitle='All Dentists Member' />
+                <Banner pageTitle='Todos los miembros de la clinica' />
 
                 <section className="doctors-wrapper section-padding">
                     <div className="container">

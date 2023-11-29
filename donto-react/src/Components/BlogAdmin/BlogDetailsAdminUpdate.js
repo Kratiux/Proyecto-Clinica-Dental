@@ -2,16 +2,27 @@ import React, { useState, useEffect } from 'react';
 import Banner from '../Banner';
 import axios from 'axios';
 
-const BlogDetailsAdmin = ({ blogId }) => {
+const BlogUpdateAdmin = ({ blogId }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [blogTitle, setBlogTitle] = useState("");
   const [blogDescription, setBlogDescription] = useState("");
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState('');
-
  
 
-
+  useEffect(() => {
+    axios
+      .get(`https://api.clinicadentalsofiacastro.com/api/blogs/${blogId}`)
+      .then((response) => {
+        const blogDetails = response.data;
+        console.log(blogDetails);
+        setImageUrl(blogDetails.imageUrl);
+        setBlogTitle(blogDetails.blogTitle || ''); // Ensure a default value if blogTitle is null or undefined
+        setBlogDescription(blogDetails.blogDescription);
+        console.log(response)
+      })
+      .catch((error) => {
+        console.error('Error al obtener detalles del blog:', error);
+      });
+  }, [blogId]);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -33,43 +44,29 @@ const BlogDetailsAdmin = ({ blogId }) => {
     setBlogDescription(e.target.value);
   }
 
-  const handleCommentChange = (e) => {
-    setNewComment(e.target.value);
-  }
+  
 
-  const handleAddComment = () => {
-    setComments([...comments, newComment]);
-    setNewComment('');
-  }
+  
 
-  const handleDelete = async () => {
+  const handleUpdate = async () => {
     try {
-      await axios.delete(`/api/blogs/${blogId}`);
-      // Puedes redirigir al usuario a la lista de blogs o realizar otras acciones después de eliminar
-    } catch (error) {
-      console.error('Error al eliminar el blog:', error);
-      alert('Error al eliminar el blog.');
-    }
-  }
-
-  const handlePublish = async () => {
-    try {
-      await axios.post('https://api.clinicadentalsofiacastro.com/api/blogs', {
+      await axios.put(`https://api.clinicadentalsofiacastro.com/api/blogs/update/${blogId}`, {
         imageUrl,
         blogTitle,
         blogDescription,
-        comments,
+        
       });
-      alert('Blog publicado correctamente.');
+      // Puedes redirigir al usuario a la lista de blogs u otras acciones después de actualizar
+      alert('Blog actualizado correctamente.');
     } catch (error) {
-      console.error('Error al publicar el blog:', error);
-      alert('Error al publicar el blog.');
+      console.error('Error al actualizar el blog:', error);
+      alert('Error al actualizar el blog.');
     }
   }
 
   return (
     <React.Fragment>
-      <Banner pageTitle='Single Blog Details' />
+      <Banner pageTitle='Actualizar blog' />
       <section className="blog-main-wrapper section-padding">
         <div className="container">
           <div className="row justify-content-center">
@@ -93,30 +90,18 @@ const BlogDetailsAdmin = ({ blogId }) => {
                       onChange={handleBlogDescriptionChange}
                     />
                   </div>
-                  <button type="button" onClick={handleAddComment}>
-                    Add Comment
-                  </button>
+                 
                 </form>
-
                 <div className="comment-template-section">
-                  <h3>Comments ({comments.length})</h3>
+                  
                   <ul>
-                    {comments.map((comment, index) => (
-                      <li key={index}>{comment}</li>
-                    ))}
+                    
                   </ul>
                   <div className="contact-form-wraper comment-form">
-                    <textarea
-                      placeholder="Leave a comment"
-                      value={newComment}
-                      onChange={handleCommentChange}
-                    />
+                    
                     <div className="form-group">
-                      <button type="button" onClick={handlePublish}>
-                        Publish
-                      </button>
-                      <button type="button" onClick={handleDelete}>
-                        Delete
+                      <button type="button" onClick={handleUpdate}>
+                        Update
                       </button>
                     </div>
                   </div>
@@ -130,9 +115,4 @@ const BlogDetailsAdmin = ({ blogId }) => {
   );
 }
 
-export default BlogDetailsAdmin;
-
-
-
-
-
+export default BlogUpdateAdmin;

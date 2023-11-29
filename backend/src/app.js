@@ -226,6 +226,65 @@ app.post('/send-email', (req, res) => {
 });
 
 
+app.post('/api/blogs', async (req, res) => {
+  try {
+    const { imageUrl, blogTitle, blogDescription, comments } = req.body;
+    const newBlog = new Blog({ imageUrl, blogTitle, blogDescription, comments });
+    await newBlog.save();
+    res.json({ message: 'Blog publicado correctamente.' });
+  } catch (error) {
+    res.status(500).json({ error: 'Error al publicar el blog.' });
+  }
+});
+
+app.delete('/api/blogs/:blogId', async (req, res) => {
+  try {
+    const { blogId } = req.params;
+    await Blog.findByIdAndDelete(blogId);
+    res.json({ message: 'Blog eliminado correctamente.' });
+  } catch (error) {
+    res.status(500).json({ error: 'Error al eliminar el blog.' });
+  }
+});
+
+
+app.get('/api/blogs', (req, res) => {
+
+  Blog.find({})
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+
+
+})
+
+
+app.get('/api/blogs/:id', (req, res) => {
+  const id = req.params.id; // Usar la variable id en lugar de _id
+
+  Blog.findById({ _id: id })
+    .then(blog => res.json(blog))
+    .catch(err => res.json(err))
+});
+
+
+
+
+
+// Actualizar un blog por ID
+
+
+app.put('/api/blogs/update/:id', (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndUpdate({ _id: id }, {
+    
+    imageUrl: req.body.imageUrl,
+  blogTitle: req.body.blogTitle ,
+  blogDescription: req.body.blogDescription ,
+  
+  })
+    .then(blogs => res.json(blogs))
+    .catch(err => res.json(err))
+});
 
 
 

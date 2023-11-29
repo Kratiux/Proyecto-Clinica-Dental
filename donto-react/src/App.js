@@ -30,6 +30,7 @@ import Scheduler from './Components/Scheduler/scheduler';
 import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
 import BlogAdminDetail from './Components/BlogAdmin/BlogDetailsAdmin';
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
+import BlogAdminDetailUpdate from './Components/BlogAdmin/BlogDetailsAdminUpdate';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -74,6 +75,7 @@ function App() {
         <Route path='/Scheduler/scheduler' component={Scheduler}/>
         <Route path='/BlogAdmin/BlogAdmin' component={BlogAdmin}/>
         <Route path='/BlogAdmin/BlogDetailsAdmin' component={BlogAdminDetail}/>
+        <Route path='/BlogAdmin/BlogDetailsAdminUpdate' component={BlogAdminDetailUpdate}/>
         
 
         

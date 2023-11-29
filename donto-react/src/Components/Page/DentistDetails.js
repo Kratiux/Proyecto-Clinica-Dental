@@ -10,23 +10,21 @@ class DentistDetails extends Component {
 
         return (
             <React.Fragment>
-                <Banner pageTitle='Dr. Nathan Currie' />
+                <Banner pageTitle='Dr. Sofia Castro' />
 
                 <section className="dentist-details-wrap section-padding">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-7 col-lg-8 col-12">
                                 <div className="single-dentist-details">
-                                    <h2>Dr. Nathan Currie <span>(DMD, MS, DICOI)</span></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                                    <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy.</p>
+                                    <h2>Dr. Sofia Castro <span>(DMD, MS, DICOI)</span></h2>
+                                    <p>es una apasionada dentista con una dedicación inquebrantable hacia la salud bucal. Nacida en [ciudad], Laura descubrió su fascinación por la odontología desde temprana edad, inspirada por la idea de mejorar sonrisas y, por ende, la calidad de vida de las personas.
+
+Después de completar su licenciatura en Odontología en la Universidad [Nombre], la Dra. Martínez se sumergió en la práctica clínica, perfeccionando sus habilidades en diagnóstico, tratamiento y prevención de enfermedades dentales. Su enfoque holístico hacia la atención del paciente la ha convertido en una profesional querida en la comunidad, donde no solo se preocupa por la salud dental, sino también por el bienestar general de quienes confían en sus cuidados.</p>
                                     <div className="dentist-award-membership">
-                                        <h3>Dental Associations</h3>
-                                        <li>American Dental Association</li>
-                                        <li>Academy of General Dentistry</li>
-                                        <li>Carolina Dental Society</li>
-                                        <li>Academy of General Dentistry</li>
-                                        <li>American Association of Women Dentists</li>
+                                        <h3>Asociacion Dental </h3>
+                                        <li>Colegio de Dentistas</li>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -34,9 +32,9 @@ class DentistDetails extends Component {
                                 <div className="dentist-profile-details">
                                     <div className="profile-img bg-cover mb-35" style={{ backgroundImage: "url(" + bg + ")" }}  >
                                     </div>
-                                    <p>Name: <strong>Nathan Currie</strong></p>
-                                    <p>Specialization: <strong>Orthodontics</strong></p>
-                                    <p>Phone: <strong>1-866-764-5387</strong></p>
+                                    <p>Nombre <strong>Sofia Castro</strong></p>
+                                    <p>Especializacion: <strong>Cirujana dental</strong></p>
+                                    <p>Numero de telefono <strong>1-866-764-5387</strong></p>
                                     <div className="dentist-social-link">
                                         <a href=".#"><i className="fab fa-facebook-f" /></a>
                                         <a href=".#"><i className="fab fa-twitter" /></a>
@@ -56,9 +54,15 @@ class DentistDetails extends Component {
                             </div>
                             <div className="col-md-6 col-lg-6 col-12">
                                 <div className="promo-text">
-                                    <h2>Achievements</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt labore et dolore magna aliqua. Quis ipsum dolor sit suspendisse ultrices gravida</p>
-                                    <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and fail in their duty through weakness These cases are perfectly simple and easy.</p>
+                                    <h2>Logros</h2>
+                                    <p>Excelencia Académica: Obtener un título destacado en odontología y haber completado programas de educación continua para mantenerse actualizado con los avances en el campo.
+
+Práctica Exitosa: Establecer y mantener una práctica dental exitosa, construyendo una sólida reputación entre los pacientes y la comunidad.
+
+Especialización: Obtener certificaciones en áreas especializadas como ortodoncia, periodoncia, odontología estética, implantología, entre otras.</p>
+                                    <p>Participación en Investigación: Contribuir a la investigación odontológica a través de publicaciones, presentaciones en conferencias o participación en proyectos de investigación.
+
+Participación Comunitaria: Participar en programas comunitarios de salud oral, ferias de salud, charlas educativas en escuelas o colaboración con organizaciones benéficas.</p>
                                 </div>
                             </div>
                         </div>

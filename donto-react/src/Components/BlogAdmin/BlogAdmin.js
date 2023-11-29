@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Banner from '../Banner';
 import SectionTitleOne from '../SectionTitleOne'
-import BlogCard from '../BlogAdmin/BlogCardAdmin';
-import BlogDataAdmin from '../BlogAdmin/BlogDataAdmin';
+import BlogCardAdmin from '../BlogAdmin/BlogCardAdmin';
+import BlogDataAdmin from '../Data/BlogData';
 
 
 class BlogAdmin extends Component {
@@ -17,7 +17,7 @@ class BlogAdmin extends Component {
                         <SectionTitleOne BigTitle="Blog" />
                         <div className="row">
 
-                            <BlogCard BlogDataAdmin={BlogDataAdmin} />
+                            <BlogCardAdmin BlogDataAdmin={BlogDataAdmin} />
 
                         </div>
                         <div className="row">

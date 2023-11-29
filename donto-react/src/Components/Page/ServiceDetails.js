@@ -10,7 +10,7 @@ class ServiceDetails extends Component {
 
         return (
             <React.Fragment>
-                <Banner pageTitle='Service Details' />
+                <Banner pageTitle='Detalles de Servicios' />
                 <section className="promo-content-section section-padding">
                     <div className="promo-section-shape">
                         <img src={require("../../assets/img/shape/plusb.png")} alt="" className="shape promo1" />
@@ -23,10 +23,9 @@ class ServiceDetails extends Component {
                         <div className="row align-items-center">
                             <div className="col-md-12 col-lg-6 col-12">
                                 <div className="promo-text">
-                                    <h2>PRF For Faster Healing</h2>
-                                    <p>Phasellus risus turpis, pretium sit amet magna non, molestie ultricies enim. Nullam pulvinar felis at metus malesuada, nec convallis lacus commodo. Duis blandit neque purus, nec auctor mi sollicitudin nec. Duis urna ipsum, tincidunt at euismod ut, placerat eget urna. Curabitur nec faucibus leo, et laoreet nibh. Pellentesque euismod quam at eros efficitur, vitae venenatis sem consectetur. Donec ut risus ultricies, dictum neque at, bibendum purus. In hac habitasse platea dictumst.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis risus mi. Ut placerat quam lectus. Curabitur dictum velit non lacus ornare tempor. Nullam quis augue in leo aliquet malesuada sit amet eget eros. Sed laoreet posuere velit sit amet varius.</p>
-                                </div>
+                                    <h2>Sonrisas </h2>
+                                    <p>En nuestra clínica dental, nos enorgullece ofrecer una gama completa de servicios diseñados para cuidar de tu salud bucal con atención personalizada y profesionalismo. Creemos que cada sonrisa es única y merece un cuidado especializado para lograr su mejor versión.</p>
+                                                      </div>
                             </div>
                             <div className="col-md-12 col-lg-6 col-12 mt-4 mt-lg-0">
                                 <img src={require("../../assets/img/service-details-promo1.png")} alt="" />
@@ -49,10 +48,9 @@ class ServiceDetails extends Component {
                             </div>
                             <div className="col-md-12 col-lg-6 col-12">
                                 <div className="promo-text">
-                                    <h2>Composite or Mercury?</h2>
-                                    <p>Phasellus risus turpis, pretium sit amet magna non, molestie ultricies enim. Nullam pulvinar felis at metus malesuada, nec convallis lacus commodo. Duis blandit neque purus, nec auctor mi sollicitudin nec. Duis urna ipsum, tincidunt at euismod ut, placerat eget urna. Curabitur nec faucibus leo, et laoreet nibh. Pellentesque euismod quam at eros efficitur, vitae venenatis sem consectetur. Donec ut risus ultricies, dictum neque at, bibendum purus. In hac habitasse platea dictumst.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis risus mi. Ut placerat quam lectus. Curabitur dictum velit non lacus ornare tempor. Nullam quis augue in leo aliquet malesuada sit amet eget eros. Sed laoreet posuere velit sit amet varius.</p>
-                                </div>
+                                    <h2>Odontología Preventiva</h2>
+                                    <p>Nuestro enfoque proactivo incluye revisiones regulares, limpiezas profesionales y selladores para prevenir problemas dentales antes de que ocurran.</p>
+                                                            </div>
                             </div>
                         </div>
                     </div>
@@ -70,8 +68,8 @@ class ServiceDetails extends Component {
                         <div className="row">
                             <div className="col-12 col-md-12 col-lg-8 offset-lg-2 text-center">
                                 <div className="section-text-wrap pb-25">
-                                    <h1>Safety First</h1>
-                                    <p>Since 1998, Donto  Dentistry has been proud to combine modern techniques and high-tech equipment. Dr. John Dae, Micha  and his team deliver a personalized and comfortable dental care experience unlike any other Mason dentist.</p>
+                                    <h1>La salud es primero</h1>
+                                    <p>Desde 2018, La clinica Sofia Castro ha estado orgulloso de combinar técnicas modernas y equipos de alta tecnología. La Dra. Sofía Castro y su equipo ofrecen una experiencia personalizada y cómoda en el cuidado dental, única entre los dentistas de Mason.</p>
                                 </div>
                             </div>
                         </div>
@@ -79,21 +77,21 @@ class ServiceDetails extends Component {
                             <div className="col-md-6 col-lg-6 col-12">
                                 <div className="single-video-item">
                                     <div className="video-bg-img" style={{ backgroundImage: "url(" + bg1 + ")" }}>
-                                        <a href="https://www.youtube.com/watch?v=0s35QCFg7p0" className="popup-video video-play-button">
+                                        <a href="https://www.youtube.com/watch?v=VnPFTJNHDB0" className="popup-video video-play-button">
                                             <i className="fal fa-play" />
                                         </a>
                                     </div>
-                                    <h5>The Importance Of Complete Dentistry for your Health</h5>
+                                    <h5>La Importancia de unos dientes Saludables en este caso Pericoronitis</h5>
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-6 col-12">
                                 <div className="single-video-item">
                                     <div className="video-bg-img" style={{ backgroundImage: "url(" + bg2 + ")" }}>
-                                        <a href="https://www.youtube.com/watch?v=0s35QCFg7p0" className="popup-video video-play-button">
+                                        <a href="https://www.youtube.com/watch?v=j7932pFLF9k" className="popup-video video-play-button">
                                             <i className="fal fa-play" />
                                         </a>
                                     </div>
-                                    <h5>Safety First with CT Scans!</h5>
+                                    <h5>La salud es primero  Exudado</h5>
                                 </div>
                             </div>
                         </div>

@@ -6,8 +6,8 @@ import BlogData from '../Data/BlogData';
 
 
 class Blog extends Component {
-    render() {
-
+     render() {
+  
         return (
             <React.Fragment>
                 <Banner pageTitle='Blog List' />
