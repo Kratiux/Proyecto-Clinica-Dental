@@ -30,7 +30,7 @@ function UpdateFile() {
         e.preventDefault();
         axios.put(`https://api.clinicadentalsofiacastro.com/updateFile/${id}`, { identification, names, lastName, description })
             .then(result => {
-                history.push('/Admin/DashboardUpdateFile');
+                history.push('/Admin/DashboardPatient');
                 // Manejar la respuesta o redirigir a una página de éxito
                 console.log(result);
                 // Puedes redirigir a una página de éxito o a donde necesites
