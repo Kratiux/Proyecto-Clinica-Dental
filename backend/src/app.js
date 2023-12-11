@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors({
 
-  origin: ["http://localhost:3000", "https://api.clinicadentalsofiacastro.com"],    //allow the frontend
+  origin: ["http://localhost:3000", "www.clinicadentalsofiacastro.com" ,"https://clinicadentalsofiacastro.com"],    //allow the frontend
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 
@@ -32,11 +32,8 @@ mongoose.set('useCreateIndex', true);
 
 
 
-
-
-
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000', 'https://api.clinicadentalsofiacastro.com');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000', 'www.clinicadentalsofiacastro.com' ,'https://clinicadentalsofiacastro.com');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Credentials', 'true'); // Si necesitas enviar cookies o autenticación
