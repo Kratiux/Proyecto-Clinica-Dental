@@ -21,7 +21,7 @@ const cors_whitelist = ["http://localhost:3000", "http://localhost:21000", "http
 app.use(cors({
 
   origin: function (origin, callback, abc) {
-    if (cors_whitelist.indexOf(origin) !== -1) {
+    if (cors_whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS' + JSON.stringify(abc)))
