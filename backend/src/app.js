@@ -11,20 +11,28 @@ const bodyParser = require('body-parser');
 
 
 
-
+const UserRoute = require('./routes/users.route');
+const LoginRoute = require('./routes/login.route');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
+const cors_whitelist = ["http://localhost:3000", "http://localhost:21000", "https://www.clinicadentalsofiacastro.com" ,"https://clinicadentalsofiacastro.com"]
+
 app.use(cors({
 
-  origin: ["http://localhost:3000", "https://www.clinicadentalsofiacastro.com" ,"https://clinicadentalsofiacastro.com"],    //allow the frontend
+  origin: function (origin, callback, abc) {
+    if (cors_whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS' + JSON.stringify(abc)))
+    }
+  },    //allow the frontend
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 
 }))
 app.use(cookieParser())
-app.use('/', UserRoute);
-app.use('/', LoginRoute);
+
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('useCreateIndex', true);
@@ -43,8 +51,8 @@ app.use((req, res, next) => {
   next();
 });
 
-const UserRoute = require('./routes/users.route');
-const LoginRoute = require('./routes/login.route');
+app.use('/', UserRoute);
+app.use('/', LoginRoute);
 
 app.post('/registerFile', (req, res) => {
 

@@ -10,13 +10,13 @@ const cors = require("cors")
 
 
 router.use(express.json())
-router.use(cors({
+/* router.use(cors({
 
-    origin: "https://api.clinicadentalsofiacastro.com", //allow the frontend
+    origin: "https://www.clinicadentalsofiacastro.com", //allow the frontend
     methods: ["GET", "POST"],
     credentials: true
     
-    }))
+    })) */
     router.use(cookieParser())
 
 
