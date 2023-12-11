@@ -11,8 +11,7 @@ const bodyParser = require('body-parser');
 
 
 
-const UserRoute = require('./routes/users.route');
-const LoginRoute = require('./routes/login.route');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
@@ -43,6 +42,9 @@ app.use((req, res, next) => {
 
   next();
 });
+
+const UserRoute = require('./routes/users.route');
+const LoginRoute = require('./routes/login.route');
 
 app.post('/registerFile', (req, res) => {
 
