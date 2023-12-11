@@ -145,7 +145,7 @@ export default function SignIn() {
 
 
 
-      axios.post('https://www.clinicadentalsofiacastro.com/login', { email, password })
+      axios.post('https://api.clinicadentalsofiacastro.com/login', { email, password })
         .then(result => {
           console.log(result);
 
