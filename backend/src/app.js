@@ -90,7 +90,7 @@ app.put('/updateFile/:id', (req, res) => {
     .catch(err => res.json(err))
 });
 
-app.delete('/deleteFile/:id', (req, res) => {
+app.delete('https://api.clinicadentalsofiacastro.com/deleteFile/:id', (req, res) => {
   const id = req.params.id;
 
   FileModel.findByIdAndDelete(id) // No necesitas { _id: id } aquí
