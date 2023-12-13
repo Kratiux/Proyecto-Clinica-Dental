@@ -204,7 +204,7 @@ app.post('/send-email', (req, res) => {
           </div>
           <p style="font-size:1.1em">Hola,</p>
           <p>Gracias por escoger los servicios de la Clinica Sofia Castro. Con el siguiente link cambie la contraseña</p>
-          <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">https://api.clinicadentalsofiacastro.com/reset-password/${email}</h2>
+          <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">https://clinicadentalsofiacastro.com/reset-password/${email}</h2>
           <p style="font-size:0.9em;">Les saluda,<br />Clinica Dental Sofia Castro</p>
           <hr style="border:none;border-top:1px solid #eee" />
           <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
