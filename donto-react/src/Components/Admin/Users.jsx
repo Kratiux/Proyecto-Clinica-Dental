@@ -28,73 +28,62 @@ function UserList() {
 
 
 
-  const handleDelete=(id) =>{
+  const handleDelete = (id) => {
 
-    axios.delete('https://api.clinicadentalsofiacastro.com/deleteUser/'+id)
-    .then(res=> {console.log(res)
-    window.location.reload()
-    })
-    .catch(err => console.log(err))
-}
+    axios.delete('https://api.clinicadentalsofiacastro.com/deleteUser/' + id)
+      .then(res => {
+        console.log(res)
+        window.location.reload()
+      })
+      .catch(err => console.log(err))
+  }
 
   return (
 
     <div>
-    <Typography variant="h6">Usuarios Recientes</Typography>
-    <Table size="small">
-      <TableHead>
-        <TableRow>
-          <TableCell>Identification</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Last Name</TableCell>
-          <TableCell>Phone</TableCell>
-          <TableCell>Birthday</TableCell>
-          <TableCell>Gender</TableCell>
-          <TableCell>Email</TableCell>
-          <TableCell>Province</TableCell>
-          <TableCell>Canton</TableCell>
-          <TableCell>District</TableCell>
-          <TableCell>Image</TableCell>
-          <TableCell>Role</TableCell>
-          <TableCell>Action</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {users.map((user) => (
-          <TableRow key={user._id}>
-            <TableCell>{user.identification}</TableCell>
-            <TableCell>{user.name}</TableCell>
-            <TableCell>{user.lastName}</TableCell>
-            <TableCell>{user.phone}</TableCell>
-            <TableCell>{user.birthday}</TableCell>
-            <TableCell>{user.gender}</TableCell>
-            <TableCell>{user.email}</TableCell>
-            <TableCell>{user.province}</TableCell>
-            <TableCell>{user.canton}</TableCell>
-            <TableCell>{user.distrit}</TableCell>
-            <TableCell>{user.img}</TableCell>
-            <TableCell>{user.role}</TableCell>
-            <TableCell>
-            <Link to={`DashboardCreateUser`}>
-                <Button variant="contained" color="green">
-                  Crear
-                </Button>
-            </Link>
-              <Link to={`UpdateUser/${user._id}`}>
-                <Button variant="contained" color="primary">
-                  Actualizar
-                </Button>
-              </Link>
-              <Button  variant="contained" color="secondary" onClick={(e)=> handleDelete(user._id)}>
-                Eliminar
-              </Button>
-            </TableCell>
+      <Typography variant="h6" className='pb-3'>Usuarios Recientes</Typography>
+      <Link to={`DashboardCreateUser`}>
+        <Button variant="contained" class='btn btn-success'>
+          Crear
+        </Button>
+      </Link>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell className='pt-3'>Identificación</TableCell>
+            <TableCell>Nombre</TableCell>
+            <TableCell>Apellido</TableCell>
+            <TableCell>Telefono</TableCell>
+            <TableCell>Correo</TableCell>
+            <TableCell>Provincia</TableCell>
+
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </div>
-);
+        </TableHead>
+        <TableBody>
+          {users.map((user) => (
+            <TableRow key={user._id}>
+              <TableCell>{user.identification}</TableCell>
+              <TableCell>{user.name}</TableCell>
+              <TableCell>{user.lastName}</TableCell>
+              <TableCell>{user.phone}</TableCell>
+              <TableCell>{user.email}</TableCell>
+              <TableCell>{user.province}, {user.canton}, {user.distrit}</TableCell>
+              <TableCell>
+                <Link to={`UpdateUser/${user._id}`}>
+                  <Button variant="contained" color="primary">
+                    Actualizar
+                  </Button>
+                </Link>
+                <Button variant="contained" color="secondary" onClick={(e) => handleDelete(user._id)}>
+                  Eliminar
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
 }
 
 export default UserList;
