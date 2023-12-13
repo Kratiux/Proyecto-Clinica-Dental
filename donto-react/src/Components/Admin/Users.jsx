@@ -55,7 +55,7 @@ function UserList() {
             <TableCell>Apellido</TableCell>
             <TableCell>Telefono</TableCell>
             <TableCell>Correo</TableCell>
-            <TableCell>Provincia</TableCell>
+            <TableCell>Ubicación</TableCell>
 
           </TableRow>
         </TableHead>
