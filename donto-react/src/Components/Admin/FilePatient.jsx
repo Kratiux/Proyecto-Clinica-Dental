@@ -29,9 +29,9 @@ function FileList() {
 
 
 
-  const handleDelete=(id) =>{
+  const handleDelete=(_id) =>{
 
-    axios.delete('https://api.clinicadentalsofiacastro.com/deleteFile/'+id)
+    axios.delete('https://api.clinicadentalsofiacastro.com/deleteFile/'+_id)
     .then(res=> {console.log(res)
     window.location.reload()
     })
