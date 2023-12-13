@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { Inject, ScheduleComponent, Day, Week, Month,ViewsDirective,ViewDirective} from '@syncfusion/ej2-react-schedule';
+import { Inject, ScheduleComponent, Day, Week, Month, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
 import { registerLicense } from '@syncfusion/ej2-base';
+import axios from 'axios';
 
-registerLicense('Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1JpRGJGfV5yd0VEalxXTnVfUj0eQnxTdEZiWH9acXBVQGNcVU1+Vw==');
+
+registerLicense('Ngo9BigBOggjHTQxAR8/V1NHaF1cWWhIfEx0THxbf1xzZF1MZFlbRXJPMyBoS35RdURiW3ZeeHBQRGBdUUZx');
+
 
 class Scheduler extends Component {
   constructor(props) {
     super(props);
     this.onPopupOpen = this.onPopupOpen.bind(this);
+    this.onEventAdded = this.onEventAdded.bind(this);
   }
 
   onPopupOpen(args) {
@@ -26,6 +30,17 @@ class Scheduler extends Component {
     }
   }
 
+  onEventAdded(args) {
+    // Send the new appointment data to the server
+    axios.post('https://api.clinicadentalsofiacastro.com/api/appointments', args.data)
+      .then(response => {
+        console.log('Appointment saved successfully:', response.data);
+      })
+      .catch(error => {
+        console.error('Error saving appointment:', error);
+      });
+  }
+
   convertToVisit(args) {
     // Get the data from the event editor
     const eventData = args.element.querySelector('.e-schedule-form').ej2_instances[0].RecurrenceRule();
@@ -37,16 +52,15 @@ class Scheduler extends Component {
   render() {
     return (
       <div>
-        <ScheduleComponent popupOpen={this.onPopupOpen}>
+        <ScheduleComponent popupOpen={this.onPopupOpen} eventSettings={{ dataSource: [] }} eventAdded={this.onEventAdded}>
 
-        <ViewsDirective>
-              <ViewDirective option="Day" />
-              <ViewDirective option="Week" />
-             
-              <ViewDirective option="Month" />
-            </ViewsDirective>
-          
-          <Inject services={[Day, Week, Month ]} />
+          <ViewsDirective>
+            <ViewDirective option="Day" />
+            <ViewDirective option="Week" />
+            <ViewDirective option="Month" />
+          </ViewsDirective>
+
+          <Inject services={[Day, Week, Month]} />
 
         </ScheduleComponent>
       </div>
